@@ -1,0 +1,70 @@
+{
+    // "release-type": "python",
+  
+
+    // BREAKING CHANGE only bumps semver minor if version < 1.0.0
+    // absence defaults to false
+    "bump-minor-pre-major": true,
+  
+    // feat commits bump semver patch instead of minor if version < 1.0.0
+    // absence defaults to false
+    "bump-patch-for-minor-pre-major": true,
+  
+    // setting the type of prerelease in case of prerelease strategy
+    "prerelease-type": "beta",
+  
+    // set default conventional commit => changelog sections mapping/appearance.
+    // absence defaults to https://git.io/JqCZL
+    "changelog-sections": [
+        { type: 'feat', section: 'Featurez 🎁' },
+        { type: 'feature', section: 'Featurez 🎁' },
+        { type: 'fix', section: 'Bugz Squashed' },
+        { type: 'perf', section: 'Performance Improvements' },
+        { type: 'revert', section: 'Reverts' },
+        { type: 'docs', section: 'Documentation', hidden: true },
+        { type: 'style', section: 'Styles', hidden: true },
+        { type: 'chore', section: 'Miscellaneous Chores', hidden: true },
+        { type: 'refactor', section: 'Code Refactoring', hidden: true },
+        { type: 'test', section: 'Tests', hidden: true },
+        { type: 'build', section: 'Build System', hidden: true },
+        { type: 'ci', section: 'Continuous Integration', hidden: true }
+      ],
+
+  
+    // sets the manifest pull request title for when releasing multiple packages
+    // grouped together in the one pull request.
+    // This option has no effect when `separate-pull-requests` is `true`.
+    // Template values (i.e. ${scope}, ${component} and ${version}) are inherited
+    // from the root path's (i.e. '.') package, if present
+    // absence defaults to "chore: release ${branch}"
+    "group-pull-request-title-pattern": "chore: release ${branch}",
+  
+  
+    // per package configuration: at least one entry required.
+    // the key is the relative path from the repo root to the folder that contains
+    // all the files for that package.
+    // the value is an object with the following optional keys:
+    // - overrides for above top-level defaults AND
+    // - "package-name": Ignored by packages whose release-type implements source
+    //                   code package name lookup (e.g. "node"). Required for all
+    //                   other packages (e.g. "python")
+    // - "changelog-path": Path + filename of the changelog relative to the
+    //                     *package* directory. defaults to "CHANGELOG.md". E.g.
+    //                     for a package key of "path/to/mypkg", the location in
+    //                     the repo is path/to/pkg/CHANGELOG.md
+    // - "changelog-host": Override the GitHub host when writing changelog.
+    //                     Defaults to "https://github.com". E.g. for a commit of
+    //                     "abc123", it's hyperlink in changelog is
+    //                     https://github.com/<org>/<repo>/commit/abc123
+    "packages": {
+      // `.` is a special case for handling to root of the repository
+      ".": {
+        // overrides release-type for node
+        "release-type": "simple",
+        // exclude commits from that path from processing
+        "exclude-paths": ["path/to/myPyPkgA"]
+      
+  
+    }
+  
+  }
