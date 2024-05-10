@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/funkypenguin/test-release-please/compare/v1.1.0...v1.1.1) (2024-05-10)
+
+
+### Bug Fixes
+
+* add docs ([3cc3469](https://github.com/funkypenguin/test-release-please/commit/3cc3469eda000127e6b14ac982b0a5da8adee468))
+
 ## [1.1.0](https://github.com/funkypenguin/test-release-please/compare/v1.0.0...v1.1.0) (2024-05-10)
 
 
