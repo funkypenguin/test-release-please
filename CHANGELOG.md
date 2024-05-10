@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/funkypenguin/test-release-please/compare/v1.0.0...v1.1.0) (2024-05-10)
+
+
+### Features
+
+* a second feature 🤷 ([b80ee99](https://github.com/funkypenguin/test-release-please/commit/b80ee9958466862e15ec2e177701cee2c77e9353))
+
 ## 1.0.0 (2024-05-10)
 
 
